@@ -1,685 +1,1201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Kareem · Civil & QA/QC Engineer</title>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammed Kareem — Civil & QA/QC Engineer</title>
+<meta name="description" content="Portfolio of Mohammed Kareem — Civil Engineer and QA/QC Specialist based in Riyadh, Saudi Arabia.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%231d4ed8'/><stop offset='1' stop-color='%230891b2'/></linearGradient></defs><rect width='100' height='100' rx='22' fill='url(%23g)'/><text x='50' y='68' font-size='46' font-weight='800' text-anchor='middle' fill='white' font-family='Arial'>MK</text></svg>">
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --accent: #0891b2;
+    --purple: #4f46e5;
+    --pink: #db2777;
+    --yellow: #eab308;
+    --whatsapp: #25D366;
+    --orange: #ea580c;
+    --teal: #0d9488;
+    --dark: #0f172a;
+    --gray: #64748b;
+    --light: #f8fafc;
+    --white: #ffffff;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-hover: 0 30px 60px rgba(37, 99, 235, 0.28);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background: var(--white);
+    overflow-x: hidden;
+  }
 
-        body {
-            background: #f5f9ff;
-            font-family: 'Inter', sans-serif;
-            color: #1e2b3a;
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
+  /* ================= ANIMATIONS ================= */
+  @keyframes float { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-20px) rotate(3deg)} }
+  @keyframes pulseGlow { 0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,0.4)} 50%{box-shadow:0 0 0 20px rgba(37,99,235,0)} }
+  @keyframes pulseWhatsApp { 0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.7)} 50%{box-shadow:0 0 0 22px rgba(37,211,102,0)} }
+  @keyframes gradientShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+  @keyframes fadeInUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeInUp3D {
+    from { opacity: 0; transform: perspective(800px) translateY(50px) translateZ(-60px) rotateX(-15deg); }
+    to   { opacity: 1; transform: perspective(800px) translateY(0) translateZ(0) rotateX(0); }
+  }
+  @keyframes slideInLeft3D {
+    from { opacity: 0; transform: perspective(1000px) translateX(-80px) rotateY(15deg); }
+    to   { opacity: 1; transform: perspective(1000px) translateX(0) rotateY(0); }
+  }
+  @keyframes slideInRight3D {
+    from { opacity: 0; transform: perspective(1000px) translateX(80px) rotateY(-15deg); }
+    to   { opacity: 1; transform: perspective(1000px) translateX(0) rotateY(0); }
+  }
+  @keyframes zoomIn3D {
+    from { opacity: 0; transform: perspective(800px) scale(0.7) translateZ(-100px); }
+    to   { opacity: 1; transform: perspective(800px) scale(1) translateZ(0); }
+  }
+  @keyframes orbitIn3D {
+    from { opacity: 0; transform: perspective(900px) rotateY(-90deg) translateZ(-80px); }
+    to   { opacity: 1; transform: perspective(900px) rotateY(0deg) translateZ(0); }
+  }
+  @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+  @keyframes kenburns { 0%{transform:scale(1) translate(0,0)} 100%{transform:scale(1.15) translate(-20px,-10px)} }
+  @keyframes rainbowShift { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes slideInChat { from{opacity:0;transform:translateY(20px) scale(0.9)} to{opacity:1;transform:translateY(0) scale(1)} }
+  @keyframes chatBubble { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+  @keyframes logoShake {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    5% { transform: rotate(-8deg) scale(1.05); }
+    10% { transform: rotate(8deg) scale(1.05); }
+    15% { transform: rotate(-6deg) scale(1.03); }
+    20% { transform: rotate(6deg) scale(1.03); }
+    25% { transform: rotate(0deg) scale(1); }
+  }
+  @keyframes waveMove1 { 0% { transform: translateX(0) translateY(0) scale(1); } 50% { transform: translateX(-3%) translateY(-2%) scale(1.02); } 100% { transform: translateX(0) translateY(0) scale(1); } }
+  @keyframes waveMove2 { 0% { transform: translateX(0) translateY(0); } 50% { transform: translateX(2%) translateY(3%); } 100% { transform: translateX(0) translateY(0); } }
+  @keyframes waveMove3 { 0%,100% { transform: translateX(0) rotate(0deg); } 50% { transform: translateX(-1.5%) rotate(0.3deg); } }
+  @keyframes dashFlow { to { stroke-dashoffset: -2000; } }
+  @keyframes orbFloat1 { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(60px,-40px) scale(1.15); } 66% { transform: translate(-40px,50px) scale(0.9); } }
+  @keyframes orbFloat2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-80px,-50px) scale(1.2); } }
+  @keyframes orbFloat3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(70px,60px) scale(0.85); } }
+  @keyframes rotateRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  @keyframes meshShift { 0%,100% { background-position: 0% 50%, 100% 50%, 50% 100%; } 50% { background-position: 100% 50%, 0% 50%, 50% 0%; } }
+  @keyframes shakeError { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 2.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 30, 60, 0.25);
-            overflow: hidden;
-            padding: 0 0 2rem 0;
-            transition: all 0.2s;
-        }
+  /* Section 3D background base */
+  .section-3d { position: relative; isolation: isolate; }
+  .section-3d > .bg-layer { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+  .section-3d > .container, .section-3d > .section-content { position: relative; z-index: 2; }
 
-        /* header section */
-        .hero {
-            background: linear-gradient(135deg, #0a2c3e 0%, #1b4a63 100%);
-            color: white;
-            padding: 2.5rem 2.5rem 2.5rem 2.5rem;
-            position: relative;
-            border-bottom: 6px solid #d4a11e;
-        }
+  /* ============ 3D WAVE LINES ============ */
+  .bg-waves { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.4; pointer-events: none; }
+  .bg-waves svg { width: 100%; height: 100%; display: block; }
+  .bg-waves .wave-group-1 { animation: waveMove1 18s ease-in-out infinite; transform-origin: center; }
+  .bg-waves .wave-group-2 { animation: waveMove2 22s ease-in-out infinite; transform-origin: center; }
+  .bg-waves .wave-group-3 { animation: waveMove3 26s ease-in-out infinite; transform-origin: center; }
+  .bg-waves path { fill: none; stroke-width: 0.6; stroke-linecap: round; }
+  .bg-waves path.flow-line { stroke-dasharray: 12 6; animation: dashFlow 30s linear infinite; }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            margin-bottom: 0.25rem;
-        }
+  /* Floating orbs */
+  .bg-orb { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.4; pointer-events: none; }
+  .bg-orb.orb-1 { width: 380px; height: 380px; background: radial-gradient(circle, var(--primary), transparent); top: -80px; left: -60px; animation: orbFloat1 16s ease-in-out infinite; }
+  .bg-orb.orb-2 { width: 320px; height: 320px; background: radial-gradient(circle, var(--purple), transparent); bottom: -80px; right: -60px; animation: orbFloat2 20s ease-in-out infinite; }
+  .bg-orb.orb-3 { width: 280px; height: 280px; background: radial-gradient(circle, var(--accent), transparent); top: 40%; right: 20%; animation: orbFloat3 18s ease-in-out infinite; }
+  .bg-orb.orb-4 { width: 300px; height: 300px; background: radial-gradient(circle, var(--pink), transparent); top: 20%; left: 30%; animation: orbFloat2 22s ease-in-out infinite reverse; }
 
-        .hero .subhead {
-            font-size: 1.2rem;
-            font-weight: 400;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem 1.5rem;
-        }
+  /* Mesh & Dots */
+  .bg-mesh { position: absolute; inset: 0; background: radial-gradient(at 20% 20%, rgba(37,99,235,0.1) 0%, transparent 50%), radial-gradient(at 80% 30%, rgba(79,70,229,0.1) 0%, transparent 50%), radial-gradient(at 50% 80%, rgba(8,145,178,0.1) 0%, transparent 50%); background-size: 200% 200%, 200% 200%, 200% 200%; animation: meshShift 20s ease-in-out infinite; }
+  .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(rgba(37,99,235,0.2) 1px, transparent 1px); background-size: 30px 30px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%); opacity: 0.5; }
 
-        .hero .subhead i {
-            color: #f5c542;
-            width: 1.4rem;
-            text-align: center;
-        }
+  /* ================= SCROLL PROGRESS & REVEAL ================= */
+  .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0%; background: linear-gradient(90deg, var(--primary), var(--accent), var(--purple)); z-index: 9999; box-shadow: 0 0 12px rgba(37,99,235,0.6); transition: width 0.1s; }
+  .reveal { opacity: 0; transform: translateY(50px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { transform: translateX(-70px); }
+  .reveal-left.visible { transform: translateX(0); }
+  .reveal-right { transform: translateX(70px); }
+  .reveal-right.visible { transform: translateX(0); }
+  .reveal-scale { transform: scale(0.85); }
+  .reveal-scale.visible { transform: scale(1); }
 
-        .contact-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.2rem 2rem;
-            font-size: 0.95rem;
-            margin-top: 0.8rem;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 1.2rem 1.5rem;
-            border-radius: 1.5rem;
-            backdrop-filter: blur(4px);
-        }
+  /* ================= HEADER ================= */
+  header { position: sticky; top: 0; z-index: 100; width: 100%; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(226,232,240,0.6); transition: all 0.4s ease; }
+  header.scrolled { background: rgba(255,255,255,0.97); box-shadow: 0 4px 20px rgba(15,23,42,0.08); }
+  .nav { max-width: 1280px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
 
-        .contact-grid i {
-            margin-right: 0.6rem;
-            color: #f5c542;
-            width: 1.2rem;
-        }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, var(--primary), var(--accent)); background-size: 200% 200%; animation: gradientShift 5s ease infinite, logoShake 3s ease-in-out infinite; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 900; font-size: 0.9rem; letter-spacing: -0.5px; box-shadow: 0 8px 20px rgba(37,99,235,0.35); position: relative; overflow: hidden; }
+  .logo-icon::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); transform: translateX(-100%); animation: rainbowShift 3s ease infinite; }
+  .logo:hover .logo-icon { animation: gradientShift 5s ease infinite, logoShake 0.5s ease-in-out infinite; }
+  .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .logo-text strong { font-size: 1.05rem; font-weight: 800; color: var(--dark); letter-spacing: -0.3px; }
+  .logo-text span { font-size: 0.68rem; font-weight: 600; color: var(--gray); letter-spacing: 1.5px; text-transform: uppercase; }
 
-        .contact-grid a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 1px dotted rgba(255, 255, 255, 0.4);
-            transition: 0.2s;
-        }
+  .nav-links { display: flex; gap: 18px; list-style: none; align-items: center; }
+  .nav-links li { position: relative; }
+  .nav-links a { text-decoration: none; color: var(--gray); font-weight: 500; font-size: 0.88rem; position: relative; transition: color 0.3s; padding: 6px 0; display: block; }
+  .nav-links a::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); transition: width 0.3s ease; }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-links a.active { color: var(--primary); font-weight: 600; }
+  .nav-links a.active::after { width: 100%; }
+  .nav-cta { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff !important; padding: 10px 18px !important; border-radius: 10px; font-weight: 600; transition: all 0.3s; position: relative; overflow: hidden; }
+  .nav-cta::after { display: none !important; }
+  .nav-cta::before { content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.5s; }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.4); }
+  .nav-cta:hover::before { left: 100%; }
+  .menu-toggle { display: none; font-size: 1.6rem; background: none; border: none; cursor: pointer; color: var(--dark); transition: transform 0.3s; }
+  .menu-toggle:hover { transform: scale(1.15) rotate(90deg); }
 
-        .contact-grid a:hover {
-            border-bottom: 1px solid #f5c542;
-            color: #f5c542;
-        }
+  /* ================= HERO CAROUSEL ================= */
+  .hero-carousel { position: relative; width: 100%; height: 85vh; min-height: 600px; overflow: hidden; background: #0f172a; perspective: 1400px; perspective-origin: 50% 50%; }
+  .carousel-slide { position: absolute; inset: 0; opacity: 0; transform: translateZ(-400px) rotateY(35deg) scale(0.9); transform-origin: center center; transition: opacity 1.1s ease, transform 1.3s cubic-bezier(0.16, 1, 0.3, 1); display: flex; align-items: center; padding: 0 24px; pointer-events: none; backface-visibility: hidden; }
+  .carousel-slide.active { opacity: 1; transform: translateZ(0) rotateY(0deg) scale(1); pointer-events: auto; z-index: 2; }
+  .carousel-slide.active .slide-bg { animation: kenburns 9s ease-out forwards; }
+  .carousel-slide.active .slide-content > * { animation: fadeInUp3D 0.9s cubic-bezier(0.16,1,0.3,1) both; }
+  .carousel-slide.active .slide-content > *:nth-child(1) { animation-delay: 0.25s; }
+  .carousel-slide.active .slide-content > *:nth-child(2) { animation-delay: 0.4s; }
+  .carousel-slide.active .slide-content > *:nth-child(3) { animation-delay: 0.55s; }
+  .carousel-slide.active .slide-content > *:nth-child(4) { animation-delay: 0.7s; }
 
-        .badge-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            margin-top: 1.2rem;
-        }
+  .carousel-slide.slide-variant-left .slide-content > * { animation-name: slideInLeft3D; }
+  .carousel-slide.slide-variant-right .slide-content > * { animation-name: slideInRight3D; }
+  .carousel-slide.slide-variant-zoom .slide-content > * { animation-name: zoomIn3D; }
+  .carousel-slide.slide-variant-orbit .slide-content > * { animation-name: orbitIn3D; }
 
-        .badge {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 0.35rem 1rem;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+  .slide-bg { position: absolute; inset: 0; background-size: cover; background-position: center; filter: brightness(0.4); z-index: 0; transform-origin: center; }
+  .slide-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(37,99,235,0.4) 60%, rgba(15,23,42,0.95)); }
+  .slide-inner { max-width: 1280px; margin: 0 auto; width: 100%; position: relative; z-index: 2; color: #fff; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+  .slide-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 18px; border-radius: 30px; font-size: 0.82rem; font-weight: 700; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 1.5px; background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.5); color: #93c5fd; }
+  .slide-badge::before { content: ""; width: 8px; height: 8px; background: #60a5fa; border-radius: 50%; box-shadow: 0 0 12px #60a5fa; animation: pulseGlow 2s infinite; }
+  .carousel-slide h1 { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.08; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 22px; }
+  .carousel-slide h1 .accent { background: linear-gradient(135deg, #60a5fa, #06b6d4, #3b82f6, #60a5fa); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 6s ease infinite; }
+  .carousel-slide p { font-size: 1.08rem; color: #cbd5e1; max-width: 540px; margin-bottom: 32px; }
+  .slide-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
 
-        /* main content */
-        .main-grid {
-            display: grid;
-            grid-template-columns: 1fr 2.1fr;
-            gap: 2rem;
-            padding: 2rem 2.5rem 0 2.5rem;
-        }
+  .slide-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 22px; padding: 32px; backdrop-filter: blur(18px); box-shadow: 0 20px 60px rgba(0,0,0,0.35); position: relative; }
+  .slide-card h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2.5px; color: #60a5fa; margin-bottom: 18px; font-weight: 700; }
+  .slide-stat { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.3s; }
+  .slide-stat:last-child { border-bottom: none; }
+  .slide-stat:hover { padding-left: 10px; }
+  .slide-stat .lbl { color: #cbd5e1; font-size: 0.93rem; }
+  .slide-stat .val { font-weight: 700; background: linear-gradient(135deg, #60a5fa, #06b6d4); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* sidebar */
-        .sidebar {
-            border-right: 1px solid #e1ecf5;
-            padding-right: 1.8rem;
-        }
+  .carousel-nav { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 20px; z-index: 10; }
+  .carousel-dots { display: flex; gap: 10px; }
+  .carousel-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; border: none; }
+  .carousel-dot.active { width: 34px; border-radius: 5px; background: linear-gradient(90deg, #60a5fa, #06b6d4); box-shadow: 0 0 12px rgba(96,165,250,0.6); }
+  .carousel-arrow { width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: all 0.3s; }
+  .carousel-arrow:hover { background: linear-gradient(135deg, #2563eb, #06b6d4); transform: scale(1.1); border-color: transparent; box-shadow: 0 8px 20px rgba(37,99,235,0.5); }
 
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-            color: #0f3a50;
-            margin: 1.8rem 0 1rem 0;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
+  /* ================= SECTIONS ================= */
+  section { width: 100%; padding: 100px 24px; position: relative; overflow: hidden; }
+  .container { max-width: 1280px; margin: 0 auto; }
+  .section-head { text-align: center; max-width: 720px; margin: 0 auto 70px; position: relative; z-index: 2; }
+  .section-head .eyebrow { display: inline-block; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 3px; font-size: 0.78rem; margin-bottom: 16px; padding: 6px 18px; background: rgba(37,99,235,0.08); border-radius: 20px; border: 1px solid rgba(37,99,235,0.15); }
+  .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.15; background: linear-gradient(135deg, #0f172a, #2563eb, #4f46e5, #0f172a); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 8s ease infinite; }
+  .section-head p { color: var(--gray); font-size: 1.05rem; }
 
-        .section-title i {
-            color: #d4a11e;
-            font-size: 1.2rem;
-            width: 1.5rem;
-        }
+  /* ================= BUTTONS ================= */
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s cubic-bezier(0.16,1,0.3,1); cursor: pointer; border: none; position: relative; overflow: hidden; font-family: inherit; }
+  .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; background-size: 200% 200%; box-shadow: 0 8px 24px rgba(37,99,235,0.35); }
+  .btn-primary:hover { transform: translateY(-3px) scale(1.03); box-shadow: 0 16px 40px rgba(37,99,235,0.5); background-position: 100% 0; }
+  .btn-primary::before { content: ""; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transition: left 0.6s; }
+  .btn-primary:hover::before { left: 100%; }
+  .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); }
+  .btn-outline:hover { border-color: #60a5fa; background: rgba(37,99,235,0.15); transform: translateY(-3px) scale(1.03); box-shadow: 0 12px 30px rgba(37,99,235,0.25); }
+  .btn .arrow { transition: transform 0.3s; display: inline-block; }
+  .btn:hover .arrow { transform: translateX(5px); }
 
-        .section-title:first-of-type {
-            margin-top: 0;
-        }
+  /* ================= ABOUT ================= */
+  #about { background: linear-gradient(180deg, #fff 0%, #f0f4ff 50%, #fff 100%); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 70px; align-items: center; }
+  .about-image-wrap { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(15,23,42,0.2); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
+  .about-image-wrap:hover { transform: scale(1.02) rotate(-1deg); }
+  .about-image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4/5; transition: transform 0.8s ease; }
+  .about-image-wrap:hover img { transform: scale(1.08); }
+  .about-image-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(15,23,42,0.9)); display: flex; align-items: flex-end; padding: 30px; color: #fff; }
+  .about-image-overlay h3 { font-size: 1.35rem; font-weight: 700; }
+  .about-image-overlay p { color: #cbd5e1; font-size: 0.9rem; margin-top: 4px; }
+  .about-image-badge { position: absolute; top: 24px; right: 24px; background: linear-gradient(135deg, var(--yellow), #f59e0b); color: #0f172a; padding: 10px 18px; border-radius: 12px; font-weight: 800; font-size: 0.85rem; box-shadow: 0 10px 25px rgba(234,179,8,0.5); transform: rotate(6deg); animation: float 4s ease-in-out infinite; z-index: 3; }
+  .about-text h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; line-height: 1.15; }
+  .about-text h2 .grad { background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .about-text p { color: var(--gray); margin-bottom: 16px; font-size: 1.02rem; }
+  .about-credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 26px 0; }
+  .cred-item { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #fff; border-radius: 12px; border: 1px solid #eef2f7; transition: all 0.3s; font-size: 0.92rem; font-weight: 600; box-shadow: 0 4px 12px rgba(15,23,42,0.04); }
+  .cred-item:nth-child(1) .ic { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+  .cred-item:nth-child(2) .ic { background: linear-gradient(135deg, #0891b2, #0e7490); }
+  .cred-item:nth-child(3) .ic { background: linear-gradient(135deg, #4f46e5, #4338ca); }
+  .cred-item:nth-child(4) .ic { background: linear-gradient(135deg, #ea580c, #c2410c); }
+  .cred-item:hover { border-color: rgba(37,99,235,0.3); transform: translateX(6px); box-shadow: 0 8px 20px rgba(37,99,235,0.12); }
+  .cred-item .ic { width: 34px; height: 34px; border-radius: 10px; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
 
-        .profile-text {
-            font-size: 0.95rem;
-            color: #2e4052;
-            margin-bottom: 1.2rem;
-        }
+  /* ================= SKILLS ================= */
+  #skills { background: linear-gradient(180deg, #f8fafc 0%, #e0f2fe 100%); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; position: relative; z-index: 2; }
+  .skill-card { background: #fff; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); border: 1px solid #eef2f7; transition: all 0.4s; text-align: center; }
+  .skill-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: rgba(37,99,235,0.3); }
+  .skill-icon { font-size: 2.5rem; margin-bottom: 15px; display: inline-block; transition: transform 0.4s; }
+  .skill-card:hover .skill-icon { transform: scale(1.2) rotate(10deg); }
+  .skill-card h3 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 700; color: var(--dark); }
+  .skill-card p { font-size: 0.9rem; color: var(--gray); }
 
-        .skill-bar {
-            margin-bottom: 1rem;
-        }
+  .progress-container { margin-top: 20px; }
+  .progress-item { margin-bottom: 15px; text-align: left; }
+  .progress-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; color: var(--dark); }
+  .progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 4px; width: 0; transition: width 1.5s ease-in-out; }
+  .reveal.visible .progress-fill { width: var(--target-width); }
 
-        .skill-bar span {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #1e3b4f;
-            margin-bottom: 0.3rem;
-        }
+  /* ================= EXPERIENCE ================= */
+  #experience { background: #fff; }
+  .timeline { position: relative; max-width: 900px; margin: 0 auto; }
+  .timeline::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); top: 0; bottom: 0; width: 2px; background: rgba(37,99,235,0.2); }
+  .timeline-item { position: relative; margin-bottom: 50px; width: 50%; padding: 0 40px; box-sizing: border-box; }
+  .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+  .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+  .timeline-dot { position: absolute; top: 20px; width: 20px; height: 20px; background: var(--primary); border-radius: 50%; border: 4px solid #fff; box-shadow: 0 0 0 4px rgba(37,99,235,0.2); transition: all 0.3s; }
+  .timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
+  .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
+  .timeline-item:hover .timeline-dot { background: var(--accent); transform: scale(1.2); box-shadow: 0 0 0 8px rgba(8,145,178,0.2); }
+  .timeline-content { background: #f8fafc; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; transition: all 0.3s; position: relative; }
+  .timeline-content:hover { background: #fff; box-shadow: 0 10px 30px rgba(15,23,42,0.08); transform: translateY(-5px); border-color: rgba(37,99,235,0.3); }
+  .timeline-date { display: inline-block; padding: 4px 12px; background: rgba(37,99,235,0.1); color: var(--primary); font-weight: 700; font-size: 0.8rem; border-radius: 20px; margin-bottom: 10px; }
+  .timeline-content h3 { font-size: 1.15rem; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+  .timeline-content h4 { font-size: 0.95rem; font-weight: 600; color: var(--gray); margin-bottom: 12px; }
+  .timeline-content ul { list-style: none; padding-left: 0; }
+  .timeline-content ul li { font-size: 0.9rem; color: var(--gray); margin-bottom: 8px; position: relative; padding-left: 20px; }
+  .timeline-content ul li::before { content: "•"; color: var(--primary); font-weight: bold; position: absolute; left: 0; }
 
-        .bar-bg {
-            background: #e1ecf5;
-            height: 8px;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+  /* ================= CERTIFICATIONS ================= */
+  #certifications { background: linear-gradient(180deg, #f8fafc 0%, #e0f2fe 100%); }
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; position: relative; z-index: 2; }
+  .cert-card { background: #fff; padding: 30px; border-radius: 20px; display: flex; align-items: center; gap: 20px; border-left: 4px solid var(--primary); box-shadow: var(--shadow); transition: all 0.3s; }
+  .cert-card:hover { transform: translateX(10px); box-shadow: 0 10px 30px rgba(37,99,235,0.15); }
+  .cert-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(37,99,235,0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+  .cert-text h3 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+  .cert-text p { font-size: 0.85rem; color: var(--gray); }
 
-        .bar-fill {
-            height: 8px;
-            background: linear-gradient(90deg, #1b4a63, #2e7ea1);
-            border-radius: 12px;
-            width: 0;
-            transition: width 0.3s;
-        }
+  /* ================= CONTACT ================= */
+  #contact { background: linear-gradient(135deg, #0f172a, #1e3a8a, #0f172a); background-size: 200% 200%; animation: gradientShift 12s ease infinite; color: #fff; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 2; }
+  .contact-info h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 18px; line-height: 1.15; background: linear-gradient(135deg, #fff, #93c5fd, #c4b5fd, #fff); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; animation: gradientShift 8s ease infinite; }
+  .contact-info p { color: #cbd5e1; margin-bottom: 30px; font-size: 1.02rem; }
+  .contact-item { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 12px; margin-bottom: 12px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s; text-decoration: none; color: inherit; }
+  .contact-item:hover { background: rgba(37,99,235,0.15); border-color: rgba(37,99,235,0.4); transform: translateX(8px); }
+  .contact-item .ic { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .contact-item:nth-child(2) .ic { background: linear-gradient(135deg, #25D366, #128C7E); }
+  .contact-item:nth-child(3) .ic { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+  .contact-item:nth-child(4) .ic { background: linear-gradient(135deg, #0077b5, #005582); }
+  .contact-item .txt { font-size: 0.95rem; }
+  .contact-item .txt strong { display: block; color: #fff; margin-bottom: 2px; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+  .contact-item .txt span { color: #cbd5e1; }
 
-        .lang-item {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            padding: 0.4rem 0;
-            border-bottom: 1px dashed #d6e4f0;
-        }
+  .contact-form { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; padding: 40px; backdrop-filter: blur(15px); transition: transform 0.5s; }
+  .contact-form:hover { transform: translateY(-6px); box-shadow: 0 25px 60px rgba(37,99,235,0.25); }
+  .contact-form h3 { font-size: 1.4rem; margin-bottom: 24px; font-weight: 700; }
+  .form-group { margin-bottom: 18px; position: relative; }
+  .form-group input, .form-group textarea { width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; color: #fff; font-family: inherit; font-size: 0.95rem; transition: all 0.3s; outline: none; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #94a3b8; }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--primary); background: rgba(37,99,235,0.1); box-shadow: 0 0 0 4px rgba(37,99,235,0.15); }
+  .form-group textarea { resize: vertical; min-height: 100px; font-family: inherit; }
+  .contact-form button { width: 100%; justify-content: center; background: linear-gradient(90deg, #2563eb, #4f46e5, #0891b2, #2563eb) !important; background-size: 300% 100% !important; animation: rainbowShift 5s linear infinite; box-shadow: 0 8px 24px rgba(37,99,235,0.4); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.5px; }
+  .contact-form button:hover { background-position: 100% 0 !important; box-shadow: 0 14px 40px rgba(37,99,235,0.6) !important; transform: translateY(-3px) scale(1.02); }
+  
+  /* Form Validation */
+  .error-msg { display: none; color: #f87171; font-size: 0.82rem; margin-top: 6px; padding-left: 4px; }
+  .form-group.error input, .form-group.error textarea { border-color: #f87171 !important; background: rgba(248,113,113,0.08) !important; animation: shakeError 0.4s ease; }
+  .form-group.error .error-msg { display: block; }
+  .form-status { margin-top: 18px; border-radius: 10px; font-size: 0.92rem; text-align: center; max-height: 0; overflow: hidden; transition: all 0.4s ease; }
+  .form-status.show { max-height: 120px; padding: 14px 18px; }
+  .form-status.success { background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.4); color: #4ade80; }
+  .form-status.error { background: rgba(248,113,113,0.15); border: 1px solid rgba(248,113,113,0.4); color: #f87171; }
 
-        .lang-item:last-child {
-            border-bottom: none;
-        }
+  /* ================= FOOTER ================= */
+  footer { width: 100%; background: #060a14; color: #94a3b8; padding: 70px 24px 30px; position: relative; overflow: hidden; }
+  .footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 40px; position: relative; z-index: 2; }
+  .footer-col h4 { color: #fff; font-size: 1.02rem; margin-bottom: 20px; font-weight: 700; letter-spacing: 0.5px; position: relative; padding-bottom: 12px; }
+  .footer-col h4::after { content: ""; position: absolute; bottom: 0; left: 0; width: 34px; height: 2px; background: linear-gradient(90deg, var(--primary), var(--accent)); border-radius: 2px; }
+  .footer-col p { font-size: 0.9rem; line-height: 1.7; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: all 0.3s; display: inline-block; }
+  .footer-col ul a:hover { color: #60a5fa; transform: translateX(6px); }
+  .footer-social { display: flex; gap: 12px; margin-top: 18px; }
+  .footer-social a { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; color: #94a3b8; text-decoration: none; font-size: 0.85rem; transition: all 0.3s; font-weight: 700; }
+  .footer-social a:hover { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; transform: translateY(-4px) rotate(-8deg); box-shadow: 0 10px 20px rgba(37,99,235,0.4); }
+  .footer-bottom { max-width: 1280px; margin: 0 auto; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; font-size: 0.88rem; position: relative; z-index: 2; }
+  .footer-bottom a { color: #60a5fa; text-decoration: none; transition: color 0.3s; }
+  .footer-bottom a:hover { color: #93c5fd; }
 
-        .lang-name i {
-            color: #2e7ea1;
-            width: 1.2rem;
-            margin-right: 0.5rem;
-        }
+  /* ================= WHATSAPP LIVE CHAT ================= */
+  .whatsapp-float { position: fixed; right: 24px; bottom: 96px; z-index: 999; display: flex; align-items: center; gap: 0; text-decoration: none; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .whatsapp-float .wa-btn { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #25D366, #128C7E); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.8rem; box-shadow: 0 10px 30px rgba(37,211,102,0.5); animation: pulseWhatsApp 2.5s infinite; transition: all 0.3s; position: relative; flex-shrink: 0; cursor: pointer; }
+  .whatsapp-float .wa-btn svg { width: 32px; height: 32px; fill: #fff; transition: transform 0.3s; }
+  .whatsapp-float .wa-label { background: #fff; color: #0f172a; padding: 10px 18px; border-radius: 30px; font-weight: 700; font-size: 0.9rem; white-space: nowrap; box-shadow: 0 8px 24px rgba(0,0,0,0.15); margin-right: 10px; max-width: 0; overflow: hidden; padding-left: 0; padding-right: 0; opacity: 0; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); transform: translateX(20px); pointer-events: none; border: 1px solid #e2e8f0; }
+  .whatsapp-float:hover .wa-label { max-width: 340px; opacity: 1; padding: 10px 18px; transform: translateX(0); }
+  .whatsapp-float:hover .wa-btn { transform: scale(1.1) rotate(-6deg); box-shadow: 0 15px 40px rgba(37,211,102,0.7); }
+  .whatsapp-float:hover .wa-btn svg { transform: rotate(6deg); }
+  .whatsapp-float .wa-btn::after { content: ""; position: absolute; top: 2px; right: 2px; width: 14px; height: 14px; background: #ef4444; border: 2px solid #fff; border-radius: 50%; animation: pulseGlow 1.5s infinite; box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
 
-        .cert-list, .strength-list {
-            list-style: none;
-        }
+  /* ================= BACK TO TOP ================= */
+  .back-top { position: fixed; bottom: 30px; right: 30px; width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border: none; font-size: 1.3rem; cursor: pointer; box-shadow: 0 8px 24px rgba(37,99,235,0.45); opacity: 0; transform: translateY(20px) scale(0.8); pointer-events: none; transition: all 0.4s cubic-bezier(0.16,1,0.3,1); z-index: 90; display: flex; align-items: center; justify-content: center; }
+  .back-top.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .back-top:hover { transform: translateY(-5px) scale(1.1); box-shadow: 0 15px 35px rgba(37,99,235,0.6); }
 
-        .cert-list li, .strength-list li {
-            font-size: 0.88rem;
-            margin-bottom: 0.7rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.6rem;
-        }
-
-        .cert-list li i, .strength-list li i {
-            color: #d4a11e;
-            font-size: 0.9rem;
-            margin-top: 0.2rem;
-            min-width: 1rem;
-        }
-
-        /* right content */
-        .content {
-            padding-bottom: 0.5rem;
-        }
-
-        /* experience accordion */
-        .exp-item {
-            background: #f9fcff;
-            border-radius: 1.2rem;
-            margin-bottom: 1rem;
-            border: 1px solid #e1ecf5;
-            transition: all 0.2s;
-            overflow: hidden;
-        }
-
-        .exp-header {
-            padding: 1.2rem 1.5rem;
-            cursor: pointer;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0.75rem;
-            background: #f9fcff;
-            transition: 0.2s;
-        }
-
-        .exp-header:hover {
-            background: #eef5fc;
-        }
-
-        .exp-title {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            gap: 0.6rem 1rem;
-        }
-
-        .exp-title h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0a2c3e;
-        }
-
-        .exp-company {
-            font-size: 0.9rem;
-            color: #2e7ea1;
-            font-weight: 600;
-        }
-
-        .exp-date {
-            font-size: 0.8rem;
-            background: #e1ecf5;
-            padding: 0.25rem 1rem;
-            border-radius: 30px;
-            font-weight: 500;
-            color: #1b4a63;
-            white-space: nowrap;
-        }
-
-        .exp-icon {
-            color: #d4a11e;
-            font-size: 1.2rem;
-            transition: transform 0.3s;
-        }
-
-        .exp-item.active .exp-icon {
-            transform: rotate(180deg);
-        }
-
-        .exp-body {
-            max-height: 0;
-            padding: 0 1.5rem;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.3s;
-            background: white;
-            border-top: 0px solid #e1ecf5;
-        }
-
-        .exp-item.active .exp-body {
-            max-height: 600px;
-            padding: 1.2rem 1.5rem 1.5rem 1.5rem;
-            border-top: 1px solid #e1ecf5;
-        }
-
-        .exp-body ul {
-            list-style: none;
-        }
-
-        .exp-body li {
-            font-size: 0.9rem;
-            margin-bottom: 0.7rem;
-            display: flex;
-            gap: 0.6rem;
-            color: #1e2b3a;
-        }
-
-        .exp-body li i {
-            color: #2e7ea1;
-            font-size: 0.8rem;
-            margin-top: 0.2rem;
-            min-width: 1rem;
-        }
-
-        /* education */
-        .edu-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .edu-degree {
-            font-weight: 700;
-            font-size: 1rem;
-            color: #0a2c3e;
-        }
-
-        .edu-univ {
-            font-size: 0.9rem;
-            color: #2e7ea1;
-            font-weight: 500;
-        }
-
-        .edu-year {
-            font-size: 0.8rem;
-            background: #e1ecf5;
-            display: inline-block;
-            padding: 0.2rem 0.9rem;
-            border-radius: 30px;
-            margin-top: 0.3rem;
-            font-weight: 500;
-        }
-
-        /* technical skills */
-        .tech-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1rem;
-        }
-
-        .tech-item {
-            background: white;
-            border: 1px solid #d6e4f0;
-            padding: 0.5rem 1.2rem;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: #1b4a63;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: 0.2s;
-        }
-
-        .tech-item i {
-            color: #d4a11e;
-        }
-
-        .tech-item:hover {
-            background: #eef5fc;
-            border-color: #2e7ea1;
-        }
-
-        /* footer / certificates */
-        .footer-note {
-            margin-top: 2rem;
-            padding: 1rem 2.5rem 0 2.5rem;
-            font-size: 0.8rem;
-            color: #648296;
-            border-top: 1px solid #e1ecf5;
-            text-align: center;
-        }
-
-        /* responsive */
-        @media (max-width: 850px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-                padding: 1.5rem;
-            }
-            .sidebar {
-                border-right: none;
-                padding-right: 0;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero {
-                padding: 2rem 1.5rem;
-            }
-            .contact-grid {
-                padding: 1rem;
-            }
-        }
-
-        @media (max-width: 500px) {
-            body {
-                padding: 0.8rem;
-            }
-            .container {
-                border-radius: 1.5rem;
-            }
-            .exp-title h3 {
-                font-size: 1rem;
-            }
-        }
-    </style>
+  /* ================= RESPONSIVE ================= */
+  @media (max-width: 1000px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 900px) {
+    .slide-inner { grid-template-columns: 1fr; gap: 40px; }
+    .slide-card { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-carousel { height: auto; min-height: 700px; padding: 100px 0; }
+    .timeline::before { left: 20px; }
+    .timeline-item { width: 100%; padding-left: 50px; padding-right: 0; text-align: left !important; }
+    .timeline-item:nth-child(even) { left: 0; }
+    .timeline-dot { left: 10px !important; right: auto !important; }
+  }
+  @media (max-width: 720px) {
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; background: #fff; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 24px 20px; border-bottom: 1px solid #e2e8f0; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.08); max-height: calc(100vh - 80px); overflow-y: auto; }
+    .nav-links.open { display: flex; }
+    .nav-links li { padding: 14px 0; border-bottom: 1px solid #f1f5f9; }
+    .nav-links li:last-child { border-bottom: none; padding-top: 20px; }
+    .nav-links a { display: block; width: 100%; padding: 6px 0; }
+    .nav-links a::after { display: none; }
+    .menu-toggle { display: block; }
+    section { padding: 70px 20px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .contact-form { padding: 28px 22px; }
+    .back-top { bottom: 20px; right: 20px; width: 46px; height: 46px; }
+    .whatsapp-float { right: 16px; bottom: 82px; }
+    .whatsapp-float .wa-btn { width: 54px; height: 54px; }
+    .whatsapp-float .wa-btn svg { width: 28px; height: 28px; }
+    .about-credentials { grid-template-columns: 1fr; }
+    .cert-card { flex-direction: column; text-align: center; border-left: none; border-top: 4px solid var(--primary); }
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Hero Header -->
-        <div class="hero">
-            <h1>Mohammed Kareem</h1>
-            <div class="subhead">
-                <span><i class="fas fa-hard-hat"></i> QA/QC Engineer</span>
-                <span><i class="fas fa-drafting-compass"></i> Civil Engineer</span>
-                <span><i class="fas fa-map-pin"></i> Riyadh, KSA</span>
-            </div>
-            <div class="contact-grid">
-                <div><i class="fas fa-phone-alt"></i> +966 537836478</div>
-                <div><i class="fas fa-phone-alt"></i> +966 570849844</div>
-                <div><i class="fas fa-envelope"></i> <a href="mailto:mohammedkareem0507@gmail.com">mohammedkareem0507@gmail.com</a></div>
-                <div><i class="fab fa-linkedin"></i> <a href="#">mohammedkareem0507</a></div>
-            </div>
-            <div class="badge-group">
-                <span class="badge"><i class="fas fa-certificate"></i> ISO 9001:2015 Internal Auditor</span>
-                <span class="badge"><i class="fas fa-leaf"></i> ISO 14001:2015</span>
-                <span class="badge"><i class="fas fa-shield-alt"></i> ISO 45001:2018</span>
-                <span class="badge"><i class="fas fa-check-circle"></i> SCE Accredited</span>
-            </div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <nav class="nav">
+    <a href="#" class="logo">
+      <div class="logo-icon">MK</div>
+      <div class="logo-text">
+        <strong>Mohammed Kareem</strong>
+        <span>Civil & QA/QC Engineer</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Me</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<!-- ================= HERO CAROUSEL ================= -->
+<section class="hero-carousel" id="home">
+  
+  <!-- Slide 1 -->
+  <div class="carousel-slide active slide-variant-default">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="slide-inner">
+      <div class="slide-content">
+        <div class="slide-badge">QA/QC Engineer</div>
+        <h1>Ensuring <span class="accent">Quality & Compliance</span> in Construction</h1>
+        <p>8+ years of experience in Material Inspection, Testing, and Construction. ISO 9001, 14001, and 45001 Certified Internal Auditor.</p>
+        <div class="slide-buttons">
+          <a href="#contact" class="btn btn-primary">Hire Me <span class="arrow">→</span></a>
+          <a href="#experience" class="btn btn-outline">View Experience</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <h3>Professional Snapshot</h3>
+        <div class="slide-stat"><span class="lbl">Experience</span><span class="val">8+ Years</span></div>
+        <div class="slide-stat"><span class="lbl">Location</span><span class="val">Riyadh, KSA</span></div>
+        <div class="slide-stat"><span class="lbl">SCE Membership</span><span class="val">Active (12598905)</span></div>
+        <div class="slide-stat"><span class="lbl">Languages</span><span class="val">English, Arabic, Urdu, Hindi</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="carousel-slide slide-variant-left">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="slide-inner">
+      <div class="slide-content">
+        <div class="slide-badge">Civil Site Engineering</div>
+        <h1>Building <span class="accent">Strong Foundations</span> for the Future</h1>
+        <p>Expertise in supervising building projects from proposal to construction, ensuring structures are completed within budget and on time.</p>
+        <div class="slide-buttons">
+          <a href="#skills" class="btn btn-primary">My Skills <span class="arrow">→</span></a>
+          <a href="#about" class="btn btn-outline">About Me</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <h3>Core Competencies</h3>
+        <div class="slide-stat"><span class="lbl">Inspection</span><span class="val">ASTM / ACI / BS</span></div>
+        <div class="slide-stat"><span class="lbl">Software</span><span class="val">AutoCAD, Staad Pro</span></div>
+        <div class="slide-stat"><span class="lbl">Auditing</span><span class="val">ISO QMS/EMS/OH&S</span></div>
+        <div class="slide-stat"><span class="lbl">QA/QC Tools</span><span class="val">NCRs, CAPA, RCA</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="carousel-slide slide-variant-right">
+    <div class="slide-bg" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="slide-inner">
+      <div class="slide-content">
+        <div class="slide-badge">Material Testing</div>
+        <h1>Precision in <span class="accent">Testing & Evaluation</span></h1>
+        <p>Comprehensive testing and inspection of soil, asphalt, and steel materials to ensure absolute compliance with project specifications.</p>
+        <div class="slide-buttons">
+          <a href="#certifications" class="btn btn-primary">View Certifications <span class="arrow">→</span></a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+      <div class="slide-card">
+        <h3>Testing Expertise</h3>
+        <div class="slide-stat"><span class="lbl">Steel</span><span class="val">UT, MTC, DFT</span></div>
+        <div class="slide-stat"><span class="lbl">Concrete</span><span class="val">Slump, Cubes, Rebar</span></div>
+        <div class="slide-stat"><span class="lbl">Soil</span><span class="val">Compaction, Proctor</span></div>
+        <div class="slide-stat"><span class="lbl">Asphalt</span><span class="val">Marshall, Extraction</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-nav">
+    <button class="carousel-arrow" id="prevSlide" aria-label="Previous slide">‹</button>
+    <div class="carousel-dots" id="carouselDots"></div>
+    <button class="carousel-arrow" id="nextSlide" aria-label="Next slide">›</button>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section-3d">
+  <div class="bg-layer">
+    <div class="bg-waves">
+      <svg viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2563eb" stop-opacity="0.6"/>
+            <stop offset="50%" stop-color="#0891b2" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#4f46e5" stop-opacity="0.6"/>
+          </linearGradient>
+        </defs>
+        <g class="wave-group-1">
+          <path d="M0,400 C200,200 400,600 600,400 C800,200 1000,600 1200,400 C1350,300 1440,400 1440,400" stroke="url(#waveGrad1)"/>
+          <path d="M0,420 C200,220 400,620 600,420 C800,220 1000,620 1200,420 C1350,320 1440,420 1440,420" stroke="url(#waveGrad1)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="bg-mesh"></div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-3"></div>
+  </div>
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal reveal-left">
+        <div class="about-image-badge">8+ Years Exp.</div>
+        <!-- Placeholder for profile photo -->
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80" alt="Mohammed Kareem">
+        <div class="about-image-overlay">
+          <div>
+            <h3>Mohammed Kareem</h3>
+            <p>Civil Engineer | QA/QC Specialist</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal reveal-right">
+        <span class="eyebrow">About Myself</span>
+        <h2>Building Trust Through <span class="grad">Quality Engineering</span></h2>
+        <p>To become an expert in the field of Civil and Quality Engineering, I have gained eight years of experience in Material Inspection, Testing, and Construction. I am looking forward to a career opportunity in Civil, Quality Engineering, and Consultancy.</p>
+        <p>Currently based in Riyadh, Saudi Arabia, I hold a Master of Technology in Environmental Engineering from Amity University and a Bachelor of Technology in Civil Engineering.</p>
+
+        <div class="about-credentials">
+          <div class="cred-item"><span class="ic">🎓</span> M.Tech Environmental Eng.</div>
+          <div class="cred-item"><span class="ic">🎓</span> B.Tech Civil Engineering</div>
+          <div class="cred-item"><span class="ic">🏅</span> SCE Member (12598905)</div>
+          <div class="cred-item"><span class="ic">📜</span> ISO Certified Auditor</div>
         </div>
 
-        <!-- Main two-column layout -->
-        <div class="main-grid">
-            <!-- Sidebar / Left -->
-            <div class="sidebar">
-                <!-- Profile / summary -->
-                <div class="section-title"><i class="fas fa-user-circle"></i> Profile</div>
-                <p class="profile-text">
-                    Civil & QA/QC Engineer with <strong>8 years</strong> of experience in material inspection, testing, and construction. 
-                    Certified internal auditor for ISO 9001, 14001, and 45001. Expertise in structural steel, soil, asphalt, and concrete 
-                    per ASTM, AASHTO, BS, and ACI standards. Committed to quality excellence and project delivery.
-                </p>
-
-                <!-- Languages -->
-                <div class="section-title"><i class="fas fa-globe"></i> Languages</div>
-                <div class="lang-item"><span class="lang-name"><i class="fas fa-language"></i> English</span> <span>Fluent</span></div>
-                <div class="lang-item"><span class="lang-name"><i class="fas fa-language"></i> Arabic</span> <span>Working</span></div>
-                <div class="lang-item"><span class="lang-name"><i class="fas fa-language"></i> Urdu</span> <span>Native</span></div>
-                <div class="lang-item"><span class="lang-name"><i class="fas fa-language"></i> Hindi</span> <span>Fluent</span></div>
-                <div class="lang-item"><span class="lang-name"><i class="fas fa-language"></i> Spanish</span> <span>Basic</span></div>
-
-                <!-- Certifications & training -->
-                <div class="section-title"><i class="fas fa-certificate"></i> Certifications</div>
-                <ul class="cert-list">
-                    <li><i class="fas fa-check-circle"></i> ISO 9001:2015 QMS Internal Auditor</li>
-                    <li><i class="fas fa-check-circle"></i> ISO 14001:2015 EMS Internal Auditor</li>
-                    <li><i class="fas fa-check-circle"></i> ISO 45001:2018 OH&S Internal Auditor</li>
-                    <li><i class="fas fa-check-circle"></i> SCE – Saudi Council of Engineers (Civil, 2027)</li>
-                    <li><i class="fas fa-check-circle"></i> Numerical Optimization Techniques (Dicle Univ.)</li>
-                    <li><i class="fas fa-check-circle"></i> Earthquake Resistant Design (STAAD Pro)</li>
-                </ul>
-
-                <!-- Strengths -->
-                <div class="section-title"><i class="fas fa-star"></i> Strengths</div>
-                <ul class="strength-list">
-                    <li><i class="fas fa-bolt"></i> Engineering science & technology</li>
-                    <li><i class="fas fa-chart-line"></i> Project management & problem solving</li>
-                    <li><i class="fas fa-comments"></i> Communication & teamwork</li>
-                    <li><i class="fas fa-clock"></i> Time management & adaptability</li>
-                    <li><i class="fas fa-graduation-cap"></i> Passion for learning</li>
-                </ul>
-            </div>
-
-            <!-- Right content -->
-            <div class="content">
-                <!-- Experience -->
-                <div class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</div>
-
-                <!-- Job 1 -->
-                <div class="exp-item active" id="exp1">
-                    <div class="exp-header" onclick="toggleExp('exp1')">
-                        <div class="exp-title">
-                            <h3>QA/QC Engineer</h3>
-                            <span class="exp-company">Al Munayaz Co. · Riyadh, KSA</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="exp-date">Mar 2024 – Aug 2026</span>
-                            <i class="fas fa-chevron-down exp-icon"></i>
-                        </div>
-                    </div>
-                    <div class="exp-body">
-                        <ul>
-                            <li><i class="fas fa-angle-right"></i> Created and implemented quality standards, procedures, and best practices for production, testing, and evaluation.</li>
-                            <li><i class="fas fa-angle-right"></i> Performed QA/QC inspection for structural steel fabrication & erection per approved ITPs.</li>
-                            <li><i class="fas fa-angle-right"></i> Inspected incoming steel materials, MTCs, bolts, welding consumables and verified compliance with project specs.</li>
-                            <li><i class="fas fa-angle-right"></i> Monitored fit-up, welding activities, WPS/PQR compliance, welder qualifications and conducted visual inspection.</li>
-                            <li><i class="fas fa-angle-right"></i> Inspected surface preparation and painting/coating system (DFT check, adhesion test) as per spec.</li>
-                            <li><i class="fas fa-angle-right"></i> Conducted comprehensive testing on soil, asphalt, and steel materials per ASTM, AASHTO, and BS.</li>
-                            <li><i class="fas fa-angle-right"></i> Maintained meticulous records: NCRs, test results, and quality checklists.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Job 2 -->
-                <div class="exp-item" id="exp2">
-                    <div class="exp-header" onclick="toggleExp('exp2')">
-                        <div class="exp-title">
-                            <h3>QA/QC Engineer</h3>
-                            <span class="exp-company">Shibh Al Jazira Contracting Co. · Riyadh, KSA</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="exp-date">Apr 2022 – Mar 2024</span>
-                            <i class="fas fa-chevron-down exp-icon"></i>
-                        </div>
-                    </div>
-                    <div class="exp-body">
-                        <ul>
-                            <li><i class="fas fa-angle-right"></i> Inspected testing methods for compliance with IS, ASTM, AASHTO, and BS specifications.</li>
-                            <li><i class="fas fa-angle-right"></i> Prepared inspection reports, NCRs, punch lists and ensured closure with corrective actions.</li>
-                            <li><i class="fas fa-angle-right"></i> Conducted inspection of rebar delivery, grade (60), size, MTC verification and storage condition.</li>
-                            <li><i class="fas fa-angle-right"></i> Checked rebar cutting, bending, lapping, spacing, cover and bar schedule as per ACI 318 & shop drawings.</li>
-                            <li><i class="fas fa-angle-right"></i> Managed building projects from proposal to construction and supervised other engineers.</li>
-                            <li><i class="fas fa-angle-right"></i> Collected, analyzed, and reported quality data, identifying trends and areas for improvement.</li>
-                            <li><i class="fas fa-angle-right"></i> Evaluated and qualified new suppliers to ensure incoming materials meet quality requirements.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Job 3 -->
-                <div class="exp-item" id="exp3">
-                    <div class="exp-header" onclick="toggleExp('exp3')">
-                        <div class="exp-title">
-                            <h3>Civil Site Engineer</h3>
-                            <span class="exp-company">Variant Builders Pvt. Ltd.</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="exp-date">Aug 2019 – Jul 2020</span>
-                            <i class="fas fa-chevron-down exp-icon"></i>
-                        </div>
-                    </div>
-                    <div class="exp-body">
-                        <ul>
-                            <li><i class="fas fa-angle-right"></i> Inspected reinforcement placement for footings, columns, beams, slabs, walls before concrete pour.</li>
-                            <li><i class="fas fa-angle-right"></i> Verified rebar couplers, mechanical splicing and performed bend test / tensile test.</li>
-                            <li><i class="fas fa-angle-right"></i> Maintained accurate records of lab data to ensure quality control; analyzed test results and prepared reports.</li>
-                            <li><i class="fas fa-angle-right"></i> Trained production staff and technicians on quality control principles and procedures.</li>
-                            <li><i class="fas fa-angle-right"></i> Conducted internal audits to ensure compliance with QMS (ISO standards).</li>
-                            <li><i class="fas fa-angle-right"></i> Led root cause analysis (RCA) for defects and implemented corrective and preventive actions (CAPA).</li>
-                            <li><i class="fas fa-angle-right"></i> Ensured all quality control procedures were followed consistently.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Job 4 -->
-                <div class="exp-item" id="exp4">
-                    <div class="exp-header" onclick="toggleExp('exp4')">
-                        <div class="exp-title">
-                            <h3>Civil Site Engineer</h3>
-                            <span class="exp-company">VK Construction · Delhi, India</span>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <span class="exp-date">Jul 2018 – Jul 2019</span>
-                            <i class="fas fa-chevron-down exp-icon"></i>
-                        </div>
-                    </div>
-                    <div class="exp-body">
-                        <ul>
-                            <li><i class="fas fa-angle-right"></i> Involved in constructing the DG Building at Tihar Jail, New Delhi.</li>
-                            <li><i class="fas fa-angle-right"></i> Monitored condition of materials and equipment and reported any issues immediately.</li>
-                            <li><i class="fas fa-angle-right"></i> Participated in laboratory meetings to discuss results and make recommendations for improvement.</li>
-                            <li><i class="fas fa-angle-right"></i> Attended internal and external audits; ensured project compliance with health and safety requirements.</li>
-                            <li><i class="fas fa-angle-right"></i> Worked with other engineers to complete projects on time.</li>
-                            <li><i class="fas fa-angle-right"></i> Monitored operations to ensure production standards; inspected and measured materials using calipers, gauges, micrometers.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="section-title" style="margin-top: 2rem;"><i class="fas fa-graduation-cap"></i> Education</div>
-                <div class="edu-item">
-                    <div class="edu-degree">Master of Technology – Environmental Engineering</div>
-                    <div class="edu-univ">Amity University, Uttar Pradesh</div>
-                    <span class="edu-year">2021 – 2022 · First Division</span>
-                </div>
-                <div class="edu-item">
-                    <div class="edu-degree">Bachelor of Technology – Civil Engineering</div>
-                    <div class="edu-univ">Dr. A.P.J. Abdul Kalam Technical University, Lucknow</div>
-                    <span class="edu-year">2014 – 2018 · First Division</span>
-                </div>
-
-                <!-- Technical Skills -->
-                <div class="section-title" style="margin-top: 2rem;"><i class="fas fa-laptop-code"></i> Technical Skills</div>
-                <div class="tech-grid">
-                    <span class="tech-item"><i class="fas fa-drafting-compass"></i> AutoCAD</span>
-                    <span class="tech-item"><i class="fas fa-chart-bar"></i> STAAD Pro</span>
-                    <span class="tech-item"><i class="fas fa-file-excel"></i> MS Office</span>
-                    <span class="tech-item"><i class="fas fa-flask"></i> LIMS</span>
-                    <span class="tech-item"><i class="fas fa-clipboard-check"></i> ASTM / ACI / BS</span>
-                    <span class="tech-item"><i class="fas fa-tools"></i> Material Testing</span>
-                    <span class="tech-item"><i class="fas fa-search"></i> Inspection & QA</span>
-                    <span class="tech-item"><i class="fas fa-chart-pie"></i> Data Analysis</span>
-                </div>
-            </div>
+        <div class="skill-tags" style="margin-top: 10px;">
+          <span class="skill-tag">Material Inspection</span>
+          <span class="skill-tag">Project Management</span>
+          <span class="skill-tag">QA/QC Auditing</span>
+          <span class="skill-tag">Structural Steel</span>
+          <span class="skill-tag">Concrete Technology</span>
+          <span class="skill-tag">Problem Solving</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Footer note / SCE info -->
-        <div class="footer-note">
-            <i class="fas fa-id-card"></i> SCE Membership No. 1259805 · Professional Accreditation valid until 24 June 2027 · 
-            <i class="fas fa-passport"></i> Nationality: Indian
+<!-- ================= SKILLS & TECHNICAL EXPERTISE ================= -->
+<section id="skills" class="section-3d">
+  <div class="bg-layer">
+    <div class="bg-waves">
+      <svg viewBox="0 0 1440 800" preserveAspectRatio="none">
+        <g class="wave-group-2">
+          <path d="M0,300 C240,100 480,500 720,300 C960,100 1200,500 1440,300" stroke="url(#waveGrad1)"/>
+          <path d="M0,320 C240,120 480,520 720,320 C960,120 1200,520 1440,320" stroke="url(#waveGrad1)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="bg-dots"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-4"></div>
+  </div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Technical Skills</span>
+      <h2>Areas of Expertise</h2>
+      <p>Comprehensive knowledge of construction materials, testing methods, and quality management systems.</p>
+    </div>
+    <div class="skills-grid">
+      
+      <!-- Skill Card 1 -->
+      <div class="skill-card reveal" style="transition-delay:0.05s;">
+        <div class="skill-icon">📐</div>
+        <h3>Engineering Software</h3>
+        <p>Proficient in industry-standard design and analysis tools.</p>
+        <div class="progress-container">
+          <div class="progress-item">
+            <div class="progress-label"><span>AutoCAD</span><span>90%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 90%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label"><span>Staad Pro</span><span>85%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 85%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label"><span>LIMS</span><span>80%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 80%"></div></div>
+          </div>
         </div>
+      </div>
+
+      <!-- Skill Card 2 -->
+      <div class="skill-card reveal" style="transition-delay:0.1s;">
+        <div class="skill-icon">🔍</div>
+        <h3>Inspection & Testing</h3>
+        <p>Hands-on experience with field and lab testing.</p>
+        <div class="progress-container">
+          <div class="progress-item">
+            <div class="progress-label"><span>Steel Inspection (MTC, Welding)</span><span>95%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 95%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label"><span>Concrete Testing (Slump, Cubes)</span><span>90%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 90%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label"><span>Soil & Asphalt Testing</span><span>85%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 85%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Card 3 -->
+      <div class="skill-card reveal" style="transition-delay:0.15s;">
+        <div class="skill-icon">📋</div>
+        <h3>Codes & Standards</h3>
+        <p>Deep understanding of international compliance.</p>
+        <div class="progress-container">
+          <div class="progress-item">
+            <div class="progress-label"><span>ASTM & ACI</span><span>95%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 95%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label"><span>BS (British Standards)</span><span>90%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 90%"></div></div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-label"><span>IS (Indian Standards)</span><span>90%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="--target-width: 90%"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section id="experience" class="section-3d">
+  <div class="bg-layer">
+    <div class="bg-waves">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+        <g class="wave-group-3">
+          <path d="M0,700 C300,600 600,800 900,700 C1100,640 1300,740 1440,700" stroke="url(#waveGrad1)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="bg-mesh"></div>
+    <div class="bg-orb orb-1"></div>
+  </div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Career History</span>
+      <h2>Professional Experience</h2>
+      <p>A proven track record of ensuring quality and compliance across major construction projects.</p>
     </div>
 
-    <script>
-        // Accordion toggle
-        function toggleExp(id) {
-            const item = document.getElementById(id);
-            const isActive = item.classList.contains('active');
-            
-            // Close all items
-            document.querySelectorAll('.exp-item').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            // If the clicked one wasn't active, open it
-            if (!isActive) {
-                item.classList.add('active');
-            }
-        }
+    <div class="timeline">
+      
+      <!-- Job 1 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Mar 2024 - Present</span>
+          <h3>QA/QC Engineer</h3>
+          <h4>Al Munayaz Co. — Riyadh, KSA</h4>
+          <ul>
+            <li>Create and implement quality standards, procedures, and best practices for production, testing, and evaluation.</li>
+            <li>Design and perform inspections, evaluations, and tests on materials, equipment, and finished products.</li>
+            <li>Performed QA/QC inspection for structural steel fabrication & erection as per approved ITPs.</li>
+            <li>Inspected incoming steel materials, MTCs, bolts, welding consumables and verified compliance with project specs.</li>
+            <li>Monitored fit-up, welding activities, WPS/PQR compliance, welder qualifications and conducted visual inspection.</li>
+            <li>Inspected surface preparation and painting/coating system (DFT check, adhesion test) as per spec.</li>
+            <li>Conducted comprehensive testing and inspection on site and evaluation of soil, asphalt, and steel materials to ensure compliance with project specifications ASTM, ASHTO, and BS.</li>
+            <li>Maintain meticulous records, including non-conformance reports (NCRs), test results, and quality checklists.</li>
+          </ul>
+        </div>
+      </div>
 
-        // Initialize: open the first one by default (already has active class)
-        // Ensure any other items are closed (they are by default)
-        // Set all exp-icon rotations based on active class
-        document.querySelectorAll('.exp-item').forEach(item => {
-            const icon = item.querySelector('.exp-icon');
-            if (item.classList.contains('active')) {
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                icon.style.transform = 'rotate(0)';
-            }
-        });
+      <!-- Job 2 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Apr 2022 - Mar 2024</span>
+          <h3>QA/QC Engineer</h3>
+          <h4>Shibh Al Jazira Contracting Co. — Riyadh, KSA</h4>
+          <ul>
+            <li>Inspected the tests to ensure methods comply with IS, ASTM, ASHTO, and BS specifications.</li>
+            <li>Prepared inspection reports, NCRs, punch lists and ensured closure with corrective actions.</li>
+            <li>Conducted inspection of rebar delivery, grade (60), size, MTC verification and storage condition.</li>
+            <li>Checked rebar cutting, bending, lapping, spacing, cover and bar schedule as per ACI 318 & shop drawings.</li>
+            <li>Collected, analyzed, and reported on quality data, identifying trends and areas for improvement.</li>
+            <li>Evaluated and qualified new suppliers to ensure incoming materials meet quality requirements.</li>
+          </ul>
+        </div>
+      </div>
 
-        // Update icon rotation on toggle
-        const originalToggle = toggleExp;
-        window.toggleExp = function(id) {
-            originalToggle(id);
-            // Update all icons after toggle
-            document.querySelectorAll('.exp-item').forEach(item => {
-                const icon = item.querySelector('.exp-icon');
-                if (item.classList.contains('active')) {
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    icon.style.transform = 'rotate(0)';
-                }
-            });
-        };
+      <!-- Job 3 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Aug 2019 - Jul 2020</span>
+          <h3>Civil Site Engineer</h3>
+          <h4>Variant Builders Pvt. Ltd. — India</h4>
+          <ul>
+            <li>Inspected reinforcement placement for footings, columns, beams, slabs, walls before concrete pour.</li>
+            <li>Verified rebar couplers, mechanical splicing and performed bend test / tensile test.</li>
+            <li>Inspected tests and ensured methods comply with specifications.</li>
+            <li>Maintained accurate records of lab data to ensure quality control.</li>
+            <li>Trained production staff, technicians, and other professionals on quality control principles.</li>
+            <li>Conducted internal audits to ensure compliance with quality management systems (QMS) like ISO standards.</li>
+            <li>Led root cause analysis (RCA) for defects and implemented corrective and preventive actions (CAPA).</li>
+          </ul>
+        </div>
+      </div>
 
-        // Also set progress bars for skills (visual example)
-        // We can add optional animated widths if needed. But static is fine.
-        // For demonstration, set widths
-        document.querySelectorAll('.bar-fill').forEach((el, idx) => {
-            // No dynamic needed, but we could add data attributes. For simplicity, we skip.
-        });
-    </script>
+      <!-- Job 4 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <span class="timeline-date">Jul 2018 - Jul 2019</span>
+          <h3>Civil Site Engineer</h3>
+          <h4>VK Construction — India</h4>
+          <ul>
+            <li>Involved in constructing the DG Building at Thiar Jail, Delhi, India.</li>
+            <li>Monitored the condition of materials and equipment and reported any issues immediately.</li>
+            <li>Participated in laboratory meetings to discuss results and make recommendations for improvement.</li>
+            <li>Attended Internal and External Audits.</li>
+            <li>Ensured the project complied with legal requirements, especially health and safety.</li>
+            <li>Monitored operations to ensure they meet production standards.</li>
+            <li>Inspected, tested, and measured materials using calipers, gauges, or micrometers.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certifications" class="section-3d">
+  <div class="bg-layer">
+    <div class="bg-waves">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
+        <g class="wave-group-2">
+          <path d="M0,200 C300,50 600,350 900,200 C1150,100 1350,250 1440,200" stroke="url(#waveGrad1)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="bg-dots"></div>
+    <div class="bg-orb orb-3"></div>
+  </div>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Credentials</span>
+      <h2>Licenses & Certifications</h2>
+      <p>Recognized qualifications validating my expertise and commitment to industry standards.</p>
+    </div>
+    
+    <div class="cert-grid">
+      
+      <div class="cert-card reveal" style="transition-delay:0.05s;">
+        <div class="cert-icon">🇸🇦</div>
+        <div class="cert-text">
+          <h3>Saudi Council of Engineers (SCE)</h3>
+          <p>Professional Accreditation Category: Engineer<br>Membership No: 12598905<br>Valid until: 24 June 2027</p>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.1s;">
+        <div class="cert-icon">📜</div>
+        <div class="cert-text">
+          <h3>ISO 9001:2015 (QMS)</h3>
+          <p>Certified Internal Auditor — Quality Management Systems.</p>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.15s;">
+        <div class="cert-icon">🌿</div>
+        <div class="cert-text">
+          <h3>ISO 14001:2015 (EMS)</h3>
+          <p>Certified Internal Auditor — Environmental Management Systems.</p>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.2s;">
+        <div class="cert-icon">🦺</div>
+        <div class="cert-text">
+          <h3>ISO 45001:2018 (OH&S)</h3>
+          <p>Certified Internal Auditor — Occupational Health & Safety.</p>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.25s;">
+        <div class="cert-icon">🌍</div>
+        <div class="cert-text">
+          <h3>Numerical Optimization Techniques</h3>
+          <p>Certificate of Training by Prof. Zenevel Fuat Toprak (Dicle University Turkey).</p>
+        </div>
+      </div>
+
+      <div class="cert-card reveal" style="transition-delay:0.3s;">
+        <div class="cert-icon">🌉</div>
+        <div class="cert-text">
+          <h3>Earthquake Resistant Design (Staad Pro)</h3>
+          <p>Training from B&S Directorate - RDSO, related to analysis & design of railway steel and concrete bridges.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section-3d">
+  <div class="bg-layer">
+    <div class="bg-waves">
+      <svg viewBox="0 0 1440 600" preserveAspectRatio="none">
+        <g class="wave-group-2">
+          <path d="M0,300 C300,150 600,450 900,300 C1150,200 1350,400 1440,300" stroke="url(#waveGrad1)"/>
+          <path d="M0,320 C300,170 600,470 900,320 C1150,220 1350,420 1440,320" stroke="url(#waveGrad1)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-4"></div>
+  </div>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info reveal reveal-left">
+        <span class="eyebrow" style="color:#93c5fd;background:rgba(37,99,235,0.2);border-color:rgba(37,99,235,0.3);">Get In Touch</span>
+        <h2>Let's Discuss Your Next Project</h2>
+        <p>Available for QA/QC roles, site engineering, and consultancy in Riyadh and across Saudi Arabia.</p>
+
+        <a href="tel:+966537836478" class="contact-item">
+          <div class="ic">📞</div>
+          <div class="txt"><strong>Mobile 1</strong><span>+966 537 836 478</span></div>
+        </a>
+        <a href="tel:+966570849844" class="contact-item">
+          <div class="ic">📞</div>
+          <div class="txt"><strong>Mobile 2</strong><span>+966 570 849 844</span></div>
+        </a>
+        <a href="mailto:mohammedkareem0507@gmail.com" class="contact-item">
+          <div class="ic">✉️</div>
+          <div class="txt"><strong>Email</strong><span>mohammedkareem0507@gmail.com</span></div>
+        </a>
+        <a href="https://linkedin.com/in/mohammedkareem0507" target="_blank" rel="noopener" class="contact-item">
+          <div class="ic">🔗</div>
+          <div class="txt"><strong>LinkedIn</strong><span>linkedin.com/in/mohammedkareem0507</span></div>
+        </a>
+        <div class="contact-item" style="cursor:default;">
+          <div class="ic">📍</div>
+          <div class="txt"><strong>Location</strong><span>Riyadh, Saudi Arabia</span></div>
+        </div>
+      </div>
+
+      <form class="contact-form reveal reveal-right" id="contactForm" novalidate>
+        <h3>Send a Message</h3>
+
+        <div class="form-group">
+          <input type="text" name="name" id="cf-name" placeholder="Your Name" required>
+          <small class="error-msg">Please enter your name</small>
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" id="cf-email" placeholder="Your Email" required>
+          <small class="error-msg">Please enter a valid email</small>
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="subject" id="cf-subject" placeholder="Subject">
+        </div>
+
+        <div class="form-group">
+          <textarea name="message" id="cf-message" placeholder="Tell me about your project..." required></textarea>
+          <small class="error-msg">Please write a message</small>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          <span class="btn-text">Send Message</span>
+          <span class="arrow">→</span>
+        </button>
+
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+        <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#2563eb,#0891b2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:0.85rem;">MK</div>
+        <div>
+          <div style="color:#fff;font-weight:800;font-size:1.05rem;">Mohammed Kareem</div>
+          <div style="font-size:0.7rem;color:#94a3b8;letter-spacing:1.5px;text-transform:uppercase;">Civil & QA/QC Engineer</div>
+        </div>
+      </div>
+      <p>Dedicated Civil Engineer and QA/QC Specialist with 8+ years of experience in ensuring material compliance, structural integrity, and quality management across major construction projects.</p>
+      <div class="footer-social">
+        <a href="https://linkedin.com/in/mohammedkareem0507" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="https://wa.me/966570849844" target="_blank" rel="noopener" title="WhatsApp">Wa</a>
+        <a href="mailto:mohammedkareem0507@gmail.com" title="Email">@</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Technical Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Core Competencies</h4>
+      <ul>
+        <li><a href="#skills">Material Inspection</a></li>
+        <li><a href="#skills">Structural Steel QA/QC</a></li>
+        <li><a href="#skills">Concrete Testing</a></li>
+        <li><a href="#skills">ISO Internal Auditing</a></li>
+        <li><a href="#skills">AutoCAD & Staad Pro</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact Details</h4>
+      <a href="tel:+966537836478" class="footer-contact-line">
+        <span class="fi">📞</span>
+        <span>+966 537 836 478</span>
+      </a>
+      <a href="mailto:mohammedkareem0507@gmail.com" class="footer-contact-line">
+        <span class="fi">✉️</span>
+        <span>mohammedkareem0507@gmail.com</span>
+      </a>
+      <a href="https://linkedin.com/in/mohammedkareem0507" target="_blank" rel="noopener" class="footer-contact-line">
+        <span class="fi">🔗</span>
+        <span>linkedin.com/in/mohammedkareem0507</span>
+      </a>
+      <div class="footer-contact-line" style="cursor:default;">
+        <span class="fi">📍</span>
+        <span>Riyadh, Saudi Arabia</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Mohammed Kareem. All rights reserved. | Civil & QA/QC Engineer Portfolio</p>
+  </div>
+</footer>
+
+<!-- ================= WHATSAPP LIVE CHAT ================= -->
+<div class="wa-chat-popup" id="waChatPopup">
+  <div class="wa-chat-head">
+    <button class="wa-chat-close" id="waChatClose" aria-label="Close chat">✕</button>
+    <div class="avatar">MK</div>
+    <div class="meta">
+      <strong>Mohammed Kareem</strong>
+      <small>Online — typically replies instantly</small>
+    </div>
+  </div>
+  <div class="wa-chat-body">
+    <div class="bubble">👋 Hello! I am Mohammed Kareem.</div>
+    <div class="bubble">Do you have any questions regarding QA/QC engineering or site inspection? Let's chat!</div>
+  </div>
+  <div class="wa-chat-actions">
+    <a href="https://wa.me/966537836478?text=Hello%20Mohammed%2C%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">
+      💬 Chat on WhatsApp
+    </a>
+  </div>
+</div>
+
+<a href="https://wa.me/966537836478?text=Hello%20Mohammed%2C%20I%20saw%20your%20portfolio" class="whatsapp-float" id="waFloat" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-label">Chat with me on WhatsApp 💬</span>
+  <span class="wa-btn">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 .5C7.44.5.5 7.44.5 16c0 2.82.74 5.47 2.03 7.76L.5 31.5l7.94-2.04A15.4 15.4 0 0016 31.5c8.56 0 15.5-6.94 15.5-15.5S24.56.5 16 .5zm0 28.3c-2.53 0-4.9-.68-6.94-1.87l-.5-.3-4.72 1.21 1.26-4.6-.32-.51A12.73 12.73 0 013.2 16C3.2 8.93 8.93 3.2 16 3.2S28.8 8.93 28.8 16 23.07 28.8 16 28.8zm7.05-9.55c-.39-.19-2.29-1.13-2.64-1.26-.36-.13-.62-.19-.88.19-.26.39-1 1.26-1.23 1.52-.22.26-.45.29-.84.1-.39-.19-1.63-.6-3.1-1.91-1.15-1.02-1.92-2.29-2.15-2.68-.22-.39-.02-.6.17-.79.17-.17.39-.45.58-.68.19-.22.26-.39.39-.65.13-.26.06-.49-.03-.68-.1-.19-.88-2.11-1.2-2.89-.32-.76-.64-.65-.88-.67l-.75-.01c-.26 0-.68.1-1.03.49-.36.39-1.35 1.32-1.35 3.21 0 1.89 1.38 3.72 1.58 3.98.19.26 2.72 4.16 6.6 5.83.92.4 1.64.63 2.2.81.93.29 1.77.25 2.44.15.74-.11 2.29-.94 2.61-1.84.32-.9.32-1.68.22-1.84-.1-.16-.36-.26-.75-.45z"/>
+    </svg>
+  </span>
+</a>
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<script>
+  /* ============ YEAR ============ */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ============ MOBILE MENU ============ */
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    navLinks.classList.toggle('open');
+    menuToggle.textContent = navLinks.classList.contains('open') ? '✕' : '☰';
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuToggle.textContent = '☰';
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') &&
+        !navLinks.contains(e.target) &&
+        !menuToggle.contains(e.target)) {
+      navLinks.classList.remove('open');
+      menuToggle.textContent = '☰';
+    }
+  });
+
+  /* ============ ACTIVE NAV LINK ============ */
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+  function setActiveLink() {
+    let current = 'home';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 150;
+      if (window.pageYOffset >= top) current = sec.id;
+    });
+    navAnchors.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  }
+
+  /* ============ SCROLL PROGRESS + BACK TO TOP ============ */
+  const progress = document.getElementById('scrollProgress');
+  const header = document.getElementById('header');
+  const backTop = document.getElementById('backTop');
+
+  function onScroll() {
+    const st = window.pageYOffset;
+    const dh = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = (st / dh) * 100 + '%';
+    header.classList.toggle('scrolled', st > 40);
+    backTop.classList.toggle('visible', st > 400);
+    setActiveLink();
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ============ SCROLL REVEAL ============ */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ============ HERO CAROUSEL ============ */
+  const slides = document.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+  const prevBtn = document.getElementById('prevSlide');
+  const nextBtn = document.getElementById('nextSlide');
+  let currentSlide = 0;
+  let slideInterval;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => goToSlide(i));
+    dotsContainer.appendChild(dot);
+  });
+  const dots = document.querySelectorAll('.carousel-dot');
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('active');
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+    resetAutoPlay();
+  }
+
+  function nextSlide() { goToSlide(currentSlide + 1); }
+  function prevSlide() { goToSlide(currentSlide - 1); }
+
+  function resetAutoPlay() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 6500);
+  }
+
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+  resetAutoPlay();
+
+  document.getElementById('home').addEventListener('mouseenter', () => clearInterval(slideInterval));
+  document.getElementById('home').addEventListener('mouseleave', resetAutoPlay);
+
+  /* ============ WHATSAPP CHAT POPUP ============ */
+  const waChatPopup = document.getElementById('waChatPopup');
+  const waChatClose = document.getElementById('waChatClose');
+  let chatShown = false;
+
+  setTimeout(() => {
+    if (!chatShown && sessionStorage.getItem('waChatClosed') !== 'yes') {
+      waChatPopup.classList.add('show');
+      chatShown = true;
+    }
+  }, 4000);
+
+  waChatClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    waChatPopup.classList.remove('show');
+    sessionStorage.setItem('waChatClosed', 'yes');
+  });
+
+  /* ============ EMAIL FORM HANDLER ============ */
+  const RECIPIENT_EMAIL = "mohammedkareem0507@gmail.com";
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusBox = document.getElementById('formStatus');
+  const nameInput = document.getElementById('cf-name');
+  const emailInput = document.getElementById('cf-email');
+  const subjInput = document.getElementById('cf-subject');
+  const msgInput = document.getElementById('cf-message');
+
+  [nameInput, emailInput, msgInput].forEach(inp => {
+    inp.addEventListener('input', () => inp.parentElement.classList.remove('error'));
+  });
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+  }
+
+  function showStatus(type, message) {
+    statusBox.className = 'form-status show ' + type;
+    statusBox.textContent = message;
+    if (type === 'success') {
+      setTimeout(() => { statusBox.classList.remove('show'); }, 6000);
+    }
+  }
+
+  function validateForm() {
+    let ok = true;
+    if (!nameInput.value.trim()) { nameInput.parentElement.classList.add('error'); ok = false; }
+    if (!isValidEmail(emailInput.value)) { emailInput.parentElement.classList.add('error'); ok = false; }
+    if (!msgInput.value.trim() || msgInput.value.trim().length < 5) { msgInput.parentElement.classList.add('error'); ok = false; }
+    return ok;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      showStatus('error', '⚠️ Please fix the highlighted fields.');
+      return;
+    }
+
+    const data = {
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      subject: subjInput.value.trim() || 'New message from portfolio',
+      message: msgInput.value.trim(),
+      date: new Date().toLocaleString()
+    };
+
+    submitBtn.classList.add('loading');
+    submitBtn.querySelector('.btn-text').textContent = 'Sending';
+
+    try {
+      const subject = encodeURIComponent(`[Portfolio] ${data.subject}`);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\nEmail: ${data.email}\nDate: ${data.date}\n\nMessage:\n${data.message}`
+      );
+      window.location.href = `mailto:${RECIPIENT_EMAIL}?subject=${subject}&body=${body}`;
+      
+      showStatus('success', '📧 Your email app is opening — just hit Send!');
+      setTimeout(() => form.reset(), 1500);
+    } catch (err) {
+      console.error('Send failed:', err);
+      showStatus('error', '⚠️ Something went wrong. Please email me directly.');
+    } finally {
+      submitBtn.classList.remove('loading');
+      submitBtn.querySelector('.btn-text').textContent = 'Send Message';
+    }
+  });
+</script>
+
 </body>
 </html>
